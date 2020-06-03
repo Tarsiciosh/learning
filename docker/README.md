@@ -188,6 +188,11 @@ $ docker build -t getting-started .
 $ docker build -t getting-started .
 
 
+# Image Layering
+
+$ docker image history getting-started
+
+$ cocker image history --no-trunc getting-started
 
 
 
