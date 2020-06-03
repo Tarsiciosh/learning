@@ -62,12 +62,11 @@ $ docker tag getting-started:myTag tarsiciosh/getting-started:myTag
 $ docker push tarsiciosh/getting-started:myTag
 
 ## Persisting our app
-- docker ps (to the container id)
+- docker ps (to see the container id)
 - docker exec <container-id> cat /data.txt
+- docker run -it ubuntu ls / (there is no data.txt)
+- docker rm -f 82ecacff738b
 - 
-
-
-
 
 
 
