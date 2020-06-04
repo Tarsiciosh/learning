@@ -3,18 +3,32 @@
 
 - git clone https://github.com/docker/getting-started.git
 
+or
+
+- cd getting-started-master (downloaded as a zip file)
+
 (build the container)
-- docker build -t docker101tutorial . (docker101tutorial is the tag)
+- docker build -t tutorial-image .
 
 (run the container)
-- docker run -d -p 80:80 --name docker-tutorial docker101tutorial
+- docker run -d -p 80:80 --name tutorial-container tutorial-image
 
 (share the container)
-- docker tag docker101tutorial tarsiciosh/docker101tutorial
-- docker push tarsiciosh/docker101tutorial
+- docker tag tutorial-image tarsiciosh/tutorial-image
+- docker push tarsiciosh/tutorial-image
+
+(-d) - run the container in detached mode (in the background)
+(-p 80:80) - map port 80 of the host to port 80 in the container
+(tutorial-image) - the image to use
+(-t) - tag the image
+(.) look the Docker file in the current directory
+
+# steps for the app example inside the tutorial:
+
+- download the example zip file
 
 ## Getting our app
-(Dockerfile)
+(Dockerfile) - create
 FROM node:12-alpine
 WORKDIR /app
 COPY . .
@@ -62,6 +76,7 @@ $ docker tag getting-started:myTag tarsiciosh/getting-started:myTag
 $ docker push tarsiciosh/getting-started:myTag
 
 ## Persisting our DB
+$ docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"
 $ docker ps (to see the container id)
 $ docker exec <container-id> cat /data.txt
 $ docker run -it ubuntu ls / (there is no data.txt)
@@ -196,17 +211,48 @@ $ cocker image history --no-trunc getting-started
 
 
 
-# Django-example
+# Django-example !!!
 
-- crate Dockerfile
-- create requirements.txt
-- create docker-compose.yml
+- creat a folder to hold the project
+
+(Dockerfile) - create
+FROM python:3
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /code
+WORKDIR /code
+COPY requirements.txt /code/
+RUN pip install -r requirements.txt
+COPY . /code/
+
+(requirements.txt) - create
+Django>=2.0,<3.0
+psycopg2>=2.7,<3.0
+
+(docker-compose.yml) - create
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
 
 $ docker-compose run web django-admin startproject composeexample .
+(it create the structure of a django project)
 
 $ ls -l
 
-(composeexample/settings.py)
+(composeexample/settings.py) - change
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -228,6 +274,8 @@ $ docker-compose up
 $ docker ps
 $ docker-compose down
 
+
+## SEE the airline4 example in CS50W repository
 
 
 .
