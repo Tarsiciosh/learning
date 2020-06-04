@@ -204,9 +204,29 @@ $ cocker image history --no-trunc getting-started
 
 $ docker-compose run web django-admin startproject composeexample .
 
+$ ls -l
 
+(composeexample/settings.py)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
+    }
+}
 
+$ docker-compose up
+(-> error)
 
+(composeexample/settings.py)
+ALLOWED_HOSTS = ['0.0.0.0']
+
+$ docker-compose up
+$ docker ps
+$ docker-compose down
 
 
 
