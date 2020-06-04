@@ -96,7 +96,12 @@ user.save()
 
 ## create an ajax request (...)
 
-## to deploy in heroku:
+
+
+# Deploy in heroku:
+$ heroku create --name tar-pizza
+(https://tar-pizza.herokuapp.com/ | https://git.heroku.com/tar-pizza.git)
+
 (requirements.txt) - create
 django
 gunicorn
@@ -112,42 +117,48 @@ web: gunicorn pizza.wsgi --log-file -
 (settings.py)
 import django_heroku
 ..
-django_heroku.settings(locals
+django_heroku.settings(locals())
 
-git add .
-git commit -m "test"
-git push heroku master
-heroku open
+$ git add .
+$ git commit -m "test"
+$ git push heroku master
+$ heroku open
 
-python manage.py createsuperuser
+
+
+
+
+
+$ python manage.py createsuperuser
 username: tar
 pass: tar123
 
-heroku config (to see the DATABASE_URL)
-postgres://ggwysjrkpbhuim:6d718785a3462101656b7208a55fa72dea54252f18ca5eb01258f2e06e31f62c@ec2-3-91-139-25.compute-1.amazonaws.com:5432/d8ltbduraf12fg
-
-export DATABASE_URL=postgres://ggwysjrkpbhuim:6d718785a3462101656b7208a55fa72dea54252f18ca5eb01258f2e06e31f62c@ec2-3-91-139-25.compute-1.amazonaws.com:5432/d8ltbduraf12fg
-
-python manage.py migrate
+$ python manage.py migrate
 
 # to run locally with the remote db:
 (.env)
 DATABASE_URL = postgres://ggwysjrkpbhuim:6d718785a3462101656b7208a55fa72dea54252f18ca5eb01258f2e06e31f62c@ec2-3-91-139-25.compute-1.amazonaws.com:5432/d8ltbduraf12fg
 
+or
+
+$ heroku config (to see the DATABASE_URL)
+postgres://ggwysjrkpbhuim:6d718785a3462101656b7208a55fa72dea54252f18ca5eb01258f2e06e31f62c@ec2-3-91-139-25.compute-1.amazonaws.com:5432/d8ltbduraf12fg
+
+$ export DATABASE_URL=postgres://ggwysjrkpbhuim:6d718785a3462101656b7208a55fa72dea54252f18ca5eb01258f2e06e31f62c@ec2-3-91-139-25.compute-1.amazonaws.com:5432/d8ltbduraf12fg
 
 # to run locally (runserver) with the local db:
 
-- psql
-- CREATE DATABASE mydb;
-- CREATE USER myuser WITH ENCRYPTED PASSWORD 'mypass';
+$ psql
+$ CREATE DATABASE mydb;
+$ CREATE USER myuser WITH ENCRYPTED PASSWORD 'mypass';
 
 (recommended for django:)
-- ALTER ROLE myuser SET client_encoding TO 'utf8';
-- ALTER ROLE myuser SET default_transaction_isolation TO 'read committed';
-- ALTER ROLE myuser SET timezone TO 'UTC';
+$ ALTER ROLE myuser SET client_encoding TO 'utf8';
+$ ALTER ROLE myuser SET default_transaction_isolation TO 'read committed';
+$ ALTER ROLE myuser SET timezone TO 'UTC';
 
-- GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
-- \q
+$ GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
+$ \q
 
 (pizza/settings.py)
 DATABASES = {
@@ -161,11 +172,11 @@ DATABASES = {
     }
 }
 
-- python manage.py makemigrations
-- python manage.py migrate
-- python manage.py createsuperuser
-- name: tar
-- password: tar12345678
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py createsuperuser
+name: tar
+password: tar12345678
 
 # to run locally with heroku local:
 - did't work
