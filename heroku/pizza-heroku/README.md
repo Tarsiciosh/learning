@@ -98,7 +98,7 @@ user.save()
 
 
 
-# Deploy in heroku:
+# Deploy in heroku: (it must be in an independent repository)
 $ heroku create --name tar-pizza
 (https://tar-pizza.herokuapp.com/ | https://git.heroku.com/tar-pizza.git)
 
@@ -121,6 +121,7 @@ django_heroku.settings(locals())
 
 $ git add .
 $ git commit -m "test"
+$ heroku login
 $ git push heroku master
 $ heroku open
 

@@ -53,7 +53,7 @@ $ heroku login
 
 # PREPARE THE APP
 $ git clone https://github.com/heroku/python-getting-started.git
-$ cd python-getting-started
+$ cd python-getting-started (getting-started-heroku)
 
 # DEPLOY THE APP
 $ heroku create (afternoon-tundra-29729)
