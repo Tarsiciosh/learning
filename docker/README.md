@@ -1,5 +1,5 @@
 
-# docker getting started from  docker program
+# docker getting started from the docker desktop
 
 - git clone https://github.com/docker/getting-started.git
 
