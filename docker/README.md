@@ -196,6 +196,13 @@ $ cocker image history --no-trunc getting-started
 
 
 
+# Django-example
+
+- crate Dockerfile
+- create requirements.txt
+- create docker-compose.yml
+
+$ docker-compose run web django-admin startproject composeexample .
 
 
 
