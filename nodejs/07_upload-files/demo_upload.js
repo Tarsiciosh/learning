@@ -6,10 +6,8 @@ http.createServer(function (req, res){
     if (req.url == '/fileUpload') {
         var form = new formidable.IncomingForm();
         form.parse(req, function (err, fields, files) {
-            //res.write('File upladed');
-            //res.end();
             var oldPath = files.fileToUpload.path;
-            var newPath = 'c:/Users/spa3cap/documents/github/learning-nodejs/' + files.fileToUpload.name;
+            var newPath = './' + files.fileToUpload.name;
             fs.rename(oldPath, newPath, function (err) {
                 if (err) throw err;
                 res.write ('File uploaded and moved!');
@@ -25,5 +23,3 @@ http.createServer(function (req, res){
         return res.end();
     }
 }).listen(8080);
-
-
