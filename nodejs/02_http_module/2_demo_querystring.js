@@ -5,7 +5,9 @@ http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     var q = url.parse(req.url, true).query;
     var txt = q.year + " " + q.month;
-    //res.end(txt);
     res.write(txt);
     res.end();
-}).listen(8080); 
+}).listen(8080);
+
+
+// http://localhost:8080/?year=2017&month=July ->  2017 July

@@ -15,3 +15,6 @@ http.createServer(function (req, res) {
         return res.end();
     });
 }).listen(8080);
+
+// http://hocalhost:8080/winter.html
+// http://localhost:8080/summer.html
