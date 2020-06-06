@@ -6,3 +6,8 @@ http.createServer(function(req, res){
     res.write(uc.upperCase("hello world"));
     res.end();
 }).listen(8080);
+
+
+// $ /github/learning/nodejs/npm install upper-case
+
+// http://localhost:8080/ -> HELLO WORLD
