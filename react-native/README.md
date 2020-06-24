@@ -25,6 +25,9 @@ react-native-safe-area-context
 $ npm install -g expo-cli
 $ expo update
 
+$ yarn add @react-navigation/tabs
+$ yarn add @react-navigation/bottom-tabs
+
 # React Native Docs: React Navigation
 $ npm install @react-navigation/native @react-navigation/stack
 
@@ -34,5 +37,22 @@ react-native-gesture-handler
 react-native-screens 
 react-native-safe-area-context 
 @react-native-community/masked-view
+
+# DATA API
+fetch ('https://randomuser.me/api/?results=3&nat=us').then(response => response.json()).then(result => console.log(result))
+
+async function fetchUsers() {
+  try{
+    const response = await fetch ('https://randomuser.me/api/?results=3&nat=us')
+    const result = await response.json()
+    console.log(result)
+  } catch (err) {
+    console.error (erro)
+  }
+}
+
+# using the auth server:
+> console.clear() - to clear the console screen
+> fetch('http://localhost:8000')
 
 
