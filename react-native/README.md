@@ -36,7 +36,7 @@ react-native-reanimated
 react-native-gesture-handler 
 react-native-screens 
 react-native-safe-area-context 
-@react-native-community/masked-view
+
 
 # DATA API
 fetch ('https://randomuser.me/api/?results=3&nat=us').then(response => response.json()).then(result => console.log(result))
