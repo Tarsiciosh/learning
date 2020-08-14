@@ -92,9 +92,9 @@ redux
 react-redux
 redux-thunk
 redux-persist
+@react-native-community/async-storage
 
 # redux devtools
-
 // Java - Spring - Oracle
 
 # Using ESlint
@@ -135,3 +135,53 @@ rules:
 
 
     48611-
+
+# 11Performance:
+$ expo install
+@react-navigation/native
+@react-navigation/stack
+@react-navigation/bottom-tabs
+@react-native-community/masked-view
+redux
+react-redux
+redux-thunk
+redux-persist
+@react-native-community/async-storage
+
+- change to ScrollView instead of SectionList
+
+- add action type: 'CHANGE_FIRST_CONTACT'
+- add action creator: 
+export const changeFirstContact = () => ({type: CHANGE_FIRST_CONTACT})
+- add in the reducer:
+...
+  if (action.type === CHANGE_FIRST_CONTACT) {
+    const [firstContact, ...rest] = state
+    const newContact = {...firstContact, name: 'Jordan'}
+  }
+...
+
+- change Row to be a react pure component -> refresh much faster
+
+- Animation example : runs in the native side
+- there is a bloquing function to test that it can run independently
+
+
+# 12DeployingTesting
+$ same as 11Performance
+$ expo install jest
+$ npm t
+$ npm t -- --watch 
+
+(package.json)
+"test": "jest --verbose",
+"test:watch": "jest --watch --verbose"
+
+$ npm run test:watch
+
+- to update the snapshot:
+$ npm t -- -u
+
+## integration
+(package.json)
+  // "preset": "react-native" -> "jest-expo"
