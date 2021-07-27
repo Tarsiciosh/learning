@@ -4,6 +4,7 @@ $ sudo npm install npm@latest -g
 
 # To install devtools:
 $ sudo npm install -g react-devtools --unsafe-perm=true
+
 # To change the version of devtools:
 $ npm install -d react-devtools@^3
 
@@ -53,7 +54,7 @@ async function fetchUsers() {
   }
 }
 
-# using the auth server:
+# Using the auth server:
 > console.clear() - to clear the console screen
 > fetch('http://localhost:8000')
 
