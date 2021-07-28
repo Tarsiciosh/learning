@@ -1,17 +1,145 @@
 import Head from 'next/head'
-import ReactDOM from 'react-dom'
+import React from 'react'
+
+class ToggleButton extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {isToggleOn : true};
+    //this.handleClick = this.handleClick.bind(this); //binding
+  }
+
+  // ------- prevState example
+  handleClick = () => { //public class fields syntax
+    this.setState(prevState => ({
+      isToggleOn : !prevState.isToggleOn
+    }));
+  }
+  
+  render(){
+    return (
+      <div>
+        <button onClick={this.handleClick}>
+          {this.state.isToggleOn ? 'ON' : 'OFF'}
+        </button>
+        <p>hello</p>      
+      </div> 
+    );
+  }
+}
 
 /*
-function tick (){
-  const element = (
+<button onClick={(e) => this.deleteRow(id,e)}> Delete Row </button>
+<button onClick={this.deleteRow.bind(this, id)}> Delete Row </button>      
+*/  
+
+function Form () {
+  function handleSubmit(e){
+    e.preventDefault;
+    console.log('you cliked submit');
+  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+//-------- Conditional Rendering
+function UserGreeting(props) {
+  return <h1>Welcome back</h1>
+}
+
+function GuestGreeting(props) {
+  return <h1>Please sing in.</h1>
+}
+
+function Greeting(props){
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting/>;
+  }
+  return <GuestGreeting/>
+}
+
+function LoginButton(props) {
+  return (
+    <button onClick={props.onClick}>
+      Login
+    </button>
+  )
+}
+
+function LogoutButton(props) {
+  return (
+    <button onClick={props.onClick}>
+      Logout
+    </button>
+  )
+}
+
+class LoginControl extends React.Component {
+  constructor(props){
+    super(props);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.state = {isLoggedIn: false};
+  }
+
+  handleLoginClick() {
+    this.setState({isLoggedIn: true});
+  }
+
+  handleLogoutClick() {
+    this.setState({isLoggedIn: false});
+  }
+
+  render(){
+    const isLoggedIn = this.state.isLoggedIn;
+    let button;
+    if (isLoggedIn){
+      button = <LogoutButton onClick={this.handleLogoutClick} />
+    } else {
+      button = <LoginButton onClick={this.handleLoginClick} />
+    }
+
+    return (
+      <div>
+        <Greeting isLoggedIn={isLoggedIn} />
+        {button}
+      </div>
+    )
+  }
+}
+
+//----- Logical && Operator
+function Mailbox(props){
+  const unreadMessages = props.unreadMessages;
+  return (
     <div>
-      <h2>It is {new Date().toLocaleTimeString()}. </h2>
+      <h1> Hello </h1>
+      {unreadMessages.length > 0 && 
+        <h2>
+          You have {unreadMessages.length} unread messages.
+        </h2>
+      }
     </div>
   )
-  ReactDOM.render(element,document.getElementById('test'));
 }
-setInterval (tick,10000);
-*/
+
+//-------- Conditional Operator
+function Test (props){
+  const isLoggedIn = props.isLoggedIn;
+
+  const numbers = [1,2,3,4,5];
+  const doubled = numbers.map((number) => number*2);
+  console.log(doubled);
+
+  return (
+    <div>
+      Thes user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in. 
+    </div>
+  )
+}
 
 export default function Home() {
   return (
@@ -61,7 +189,9 @@ export default function Home() {
         </div>
 
         <div id="test">
-        
+          <ToggleButton/>
+          <Form/>
+          <LoginControl/>
         </div>
 
       </main>
