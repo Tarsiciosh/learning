@@ -1,15 +1,21 @@
 import Head from 'next/head'
 import React from 'react'
+import Link from 'next/link'
+
+import {NameForm, EssayForm, FlavorForm, Reservation} from '../myTests/09-forms'
+import Calculator from '../myTests/10-liftingStateUp';
+import WelcomeDialog from '../myTests/11-composition';
+import FilterableProductTable from '../myTests/12-thinkingInReact';
 
 class ToggleButton extends React.Component {
   constructor (props) {
     super(props);
     this.state = {isToggleOn : true};
-    //this.handleClick = this.handleClick.bind(this); //binding
+    //this.handleClick = this.handleClick.bind(this); //not necessary
   }
 
   // ------- prevState example
-  handleClick = () => { //public class fields syntax
+  handleClick = () => { //----> public class fields syntax
     this.setState(prevState => ({
       isToggleOn : !prevState.isToggleOn
     }));
@@ -141,17 +147,36 @@ function Test (props){
   )
 }
 
+//--------- Rendering Multiple Components (List and Keys)
+//rule of thumb: elements inside the map() call need keys.
+function MyItems (props){
+  const numbers = props.numbers;
+  return ( 
+    <ul>
+      {numbers.map((number)=> 
+        <li key={number.toString()}> {number} </li>
+  )}</ul>
+  )
+}
+
+
+
 export default function Home() {
+  const numbers = [1,2,3,4];
   return (
     <div className="container">
+      <script src="http://localhost:8097"></script>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main> 
         <h1 className="title">
-          Learn <a href="https://nextjs.org">Next.js!</a>
+          Read{' '}
+          <Link href="/posts/first-post">  
+            <a>this page!</a>
+          </Link>
         </h1>
 
         <p className="description">
@@ -191,7 +216,18 @@ export default function Home() {
         <div id="test">
           <ToggleButton/>
           <Form/>
+          <hr />
           <LoginControl/>
+          <MyItems numbers={numbers}/>
+          
+          <NameForm/>
+          <EssayForm/>
+          <FlavorForm/>
+          <Reservation/> <hr/>
+          
+          <Calculator/>
+
+          <FilterableProductTable products={PRODUCTS}/> 
         </div>
 
       </main>
@@ -355,3 +391,12 @@ export default function Home() {
     </div>
   )
 }
+
+const PRODUCTS = [
+  {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
+  {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
+  {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
+  {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
+  {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
+  {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
+];
