@@ -1,4 +1,3 @@
-/*
 import React from 'react'
 
 //Contaiment
@@ -109,4 +108,3 @@ class SignUpDialog extends React.Component {
   }
 }
 
-*/

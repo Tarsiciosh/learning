@@ -1,180 +1,18 @@
 import Head from 'next/head'
-import React from 'react'
 import Link from 'next/link'
 
-import {NameForm, EssayForm, FlavorForm, Reservation} from '../myTests/09-forms'
-import Calculator from '../myTests/10-liftingStateUp';
-import WelcomeDialog from '../myTests/11-composition';
-import FilterableProductTable from '../myTests/12-thinkingInReact';
-
-class ToggleButton extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {isToggleOn : true};
-    //this.handleClick = this.handleClick.bind(this); //not necessary
-  }
-
-  // ------- prevState example
-  handleClick = () => { //----> public class fields syntax
-    this.setState(prevState => ({
-      isToggleOn : !prevState.isToggleOn
-    }));
-  }
-  
-  render(){
-    return (
-      <div>
-        <button onClick={this.handleClick}>
-          {this.state.isToggleOn ? 'ON' : 'OFF'}
-        </button>
-        <p>hello</p>      
-      </div> 
-    );
-  }
-}
-
-/*
-<button onClick={(e) => this.deleteRow(id,e)}> Delete Row </button>
-<button onClick={this.deleteRow.bind(this, id)}> Delete Row </button>      
-*/  
-
-function Form () {
-  function handleSubmit(e){
-    e.preventDefault;
-    console.log('you cliked submit');
-  }
-  return (
-    <form onSubmit={handleSubmit}>
-      <button type="submit">Submit</button>
-    </form>
-  );
-}
-
-//-------- Conditional Rendering
-function UserGreeting(props) {
-  return <h1>Welcome back</h1>
-}
-
-function GuestGreeting(props) {
-  return <h1>Please sing in.</h1>
-}
-
-function Greeting(props){
-  const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
-    return <UserGreeting/>;
-  }
-  return <GuestGreeting/>
-}
-
-function LoginButton(props) {
-  return (
-    <button onClick={props.onClick}>
-      Login
-    </button>
-  )
-}
-
-function LogoutButton(props) {
-  return (
-    <button onClick={props.onClick}>
-      Logout
-    </button>
-  )
-}
-
-class LoginControl extends React.Component {
-  constructor(props){
-    super(props);
-    this.handleLoginClick = this.handleLoginClick.bind(this);
-    this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.state = {isLoggedIn: false};
-  }
-
-  handleLoginClick() {
-    this.setState({isLoggedIn: true});
-  }
-
-  handleLogoutClick() {
-    this.setState({isLoggedIn: false});
-  }
-
-  render(){
-    const isLoggedIn = this.state.isLoggedIn;
-    let button;
-    if (isLoggedIn){
-      button = <LogoutButton onClick={this.handleLogoutClick} />
-    } else {
-      button = <LoginButton onClick={this.handleLoginClick} />
-    }
-
-    return (
-      <div>
-        <Greeting isLoggedIn={isLoggedIn} />
-        {button}
-      </div>
-    )
-  }
-}
-
-//----- Logical && Operator
-function Mailbox(props){
-  const unreadMessages = props.unreadMessages;
-  return (
-    <div>
-      <h1> Hello </h1>
-      {unreadMessages.length > 0 && 
-        <h2>
-          You have {unreadMessages.length} unread messages.
-        </h2>
-      }
-    </div>
-  )
-}
-
-//-------- Conditional Operator
-function Test (props){
-  const isLoggedIn = props.isLoggedIn;
-
-  const numbers = [1,2,3,4,5];
-  const doubled = numbers.map((number) => number*2);
-  console.log(doubled);
-
-  return (
-    <div>
-      Thes user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in. 
-    </div>
-  )
-}
-
-//--------- Rendering Multiple Components (List and Keys)
-//rule of thumb: elements inside the map() call need keys.
-function MyItems (props){
-  const numbers = props.numbers;
-  return ( 
-    <ul>
-      {numbers.map((number)=> 
-        <li key={number.toString()}> {number} </li>
-  )}</ul>
-  )
-}
-
-
-
 export default function Home() {
-  const numbers = [1,2,3,4];
   return (
     <div className="container">
-      <script src="http://localhost:8097"></script>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main> 
+      <main>
         <h1 className="title">
           Read{' '}
-          <Link href="/posts/first-post">  
+          <Link href="/posts/first-post">
             <a>this page!</a>
           </Link>
         </h1>
@@ -212,24 +50,6 @@ export default function Home() {
             </p>
           </a>
         </div>
-
-        <div id="test">
-          <ToggleButton/>
-          <Form/>
-          <hr />
-          <LoginControl/>
-          <MyItems numbers={numbers}/>
-          
-          <NameForm/>
-          <EssayForm/>
-          <FlavorForm/>
-          <Reservation/> <hr/>
-          
-          <Calculator/>
-
-          <FilterableProductTable products={PRODUCTS}/> 
-        </div>
-
       </main>
 
       <footer>
@@ -391,12 +211,3 @@ export default function Home() {
     </div>
   )
 }
-
-const PRODUCTS = [
-  {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
-  {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
-  {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
-  {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
-  {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
-  {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
-];

@@ -6,8 +6,8 @@
 
 
 ## Next.js 
-- > npx create-next-app 01-nextjs-blog --use-npm --example "https://github.com/vercel/next-learn-starter/tree/master/learn-starter" 
-- > cd 01-nextjs-blog
+- > npx create-next-app 03-nextjs-blog --use-npm --example "https://github.com/vercel/next-learn-starter/tree/master/learn-starter" 
+- > cd 03-nextjs-blog
 - > npm run dev
 
 > You have to be careful about the meaning of "this" in JSX callbacks. In JavaScript, class methods are not bound by default. If you forget to bind this.handleClick and pass it to onClick, this will be undefined when the function is actually called.
