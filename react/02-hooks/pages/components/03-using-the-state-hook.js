@@ -9,14 +9,15 @@ export default function Counter (){
 
   return (
     <div>
-      <p> you clicked {count} times</p>
-      <button onClick={ handleOnClick }> click </button>
+      <p className ="lead"> you clicked {count} times</p>
+      <button className ="btn btn-primary" onClick={ handleOnClick }> click </button>
     </div>
   )
 }
 
 /*
-const Counter = () => {
+// another way for the same:
+export default const Counter = () => {
   return (
     <p> hello </p>
   )

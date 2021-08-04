@@ -3,11 +3,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-import LoginControl from './components/07_conditionalRendering'
-import NumberList from './components/08_listAndKeys'
-import {NameForm, EssayForm, FlavorForm, Reservation} from './components/09-forms'
-import Calculator from './components/10-liftingStateUp'
-import FilterableProductTable from './components/12-thinkingInReact'
+import LoginControl from '../components/07-conditional-rendering'
+import NumberList from '../components/08-list-and-keys'
+import {NameForm, EssayForm, FlavorForm, Reservation} from '../components/09-forms'
+import Calculator from '../components/10-lifting-state-up'
+import FilterableProductTable from '../components/12-thinking-in-react'
 
 /*
 <button onClick={(e) => this.deleteRow(id,e)}> Delete Row </button>

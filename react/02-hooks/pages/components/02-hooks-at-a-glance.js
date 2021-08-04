@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react'
 
-export default function Example (){
+export default function StateAndEffectCounter (){
   const [count,setCount] = useState(0);
 
   //similar to componentDidMount and componentDidUpdate:
-
   useEffect(()=>{
     document.title = `you clicked ${count} times`; 
   });
@@ -39,8 +38,6 @@ function FriendStatusSimple(props) {
   }
   return isOnline ? 'Online' : 'Offline';
 }
-
-
 
 function FriendStatusWithCounter(props) {
   const [count, setCount] = useState(0);
