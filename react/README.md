@@ -74,3 +74,17 @@ what does it means polyfills?
 > git push -f origin main (will override the remote branch)
 
 ## install eslint-plugin-react-hooks
+
+
+## Formik tutorial
+
+> cd 04-formik
+> cd src
+> rm -f *
+> copy the files from the tutorial page: styles.css and index.js
+
+> 
+
+> yarn add yup
+
+
