@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { FormikProvider, useFormik } from "formik";
+import { useFormik } from "formik";
 import "./styles.css";
 
 // A Custom validation function. This must return an object
