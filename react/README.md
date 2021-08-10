@@ -4,12 +4,12 @@
 - > npx create-react-app 00-create-react-app
 - > cd 00-create-react-app
 - > npm start or yarn start
-#
+
 ## Next.js 
 - > npx create-next-app 03-nextjs-blog --use-npm --example "https://github.com/vercel/next-learn-starter/tree/master/learn-starter" 
 - > cd 03-nextjs-blog
 - > npm run dev
-#
+
 ## Adding Bootstrap 5 to Next.js
 - > npm i @popperjs/core
 - > npm install bootstrap@next
@@ -30,15 +30,11 @@ export default function MyApp({ Component, pageProps }) {
       </Head>
       Component {...pageProps} />
     </>
-  
   )
 }
 
-
-
 ## Installing grey matter (parse metadata in markdown files)
 - > npm install gray-matter
-
 
 ## Miscelaneous
 > You have to be careful about the meaning of "this" in JSX callbacks. In JavaScript, class methods are not bound by default. If you forget to bind this.handleClick and pass it to onClick, this will be undefined when the function is actually called.
@@ -46,7 +42,6 @@ This is not React-specific behavior; it is a part of how functions work in JavaS
 
 > in chrome to see the command windows:
 > Cmd + shift + p 
-
 
 what does it means polyfills?
 
@@ -64,11 +59,9 @@ what does it means polyfills?
 (to change the branch)
 > git branch ( to see the branches)
 > git checkout -b main (create an switch to main)
-
 > git push -f origin main (will override the remote branch)
 
 ## install eslint-plugin-react-hooks
-
 
 ## Formik tutorial
 > cd 04-formik
@@ -77,6 +70,5 @@ what does it means polyfills?
 > copy the files from the tutorial page: styles.css and index.js
 > yarn add yup
 
-## learning Axios
+## Learning Axios
 > 
-
