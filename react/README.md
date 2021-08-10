@@ -77,14 +77,12 @@ what does it means polyfills?
 
 
 ## Formik tutorial
-
 > cd 04-formik
 > cd src
 > rm -f *
 > copy the files from the tutorial page: styles.css and index.js
-
-> 
-
 > yarn add yup
 
+## learning Axios
+> 
 
