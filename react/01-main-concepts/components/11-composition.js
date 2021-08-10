@@ -86,6 +86,14 @@ class SignUpDialog extends React.Component {
     this.state = {login: ''};
   }
 
+  handleChange(e) {
+    this.setState({login: e.target.value});
+  }
+
+  handleSignUp() {
+    alert(`Welcome aboard, ${this.state.login}!`);
+  }
+
   render() {
     return (
       <Dialog title="Mars Exploration Program"
@@ -97,14 +105,6 @@ class SignUpDialog extends React.Component {
         </button>
       </Dialog>
     );
-  }
-
-  handleChange(e) {
-    this.setState({login: e.target.value});
-  }
-
-  handleSignUp() {
-    alert(`Welcome aboard, ${this.state.login}!`);
   }
 }
 
