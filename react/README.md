@@ -70,5 +70,15 @@ what does it means polyfills?
 > copy the files from the tutorial page: styles.css and index.js
 > yarn add yup
 
+## Boostrap with create-react-app
+> create the app
+> remove unnsesesary items
+> npm i bootstrap@5.0.0-alpha3
+
+(src.index)
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
 ## Learning Axios
-> 
+> yarn add axios
+
