@@ -1,10 +1,11 @@
 import React from 'react'
-import TestAxios from './test-axios';
+import Hero from './test-axios';
 
 const App = () => {
   return (
     <div>
-      <TestAxios />
+      
+      <Hero />
     </div>
   );
 }
