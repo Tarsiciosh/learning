@@ -4,32 +4,27 @@ import { useState, useEffect } from 'react'
 
 //const token = '102141048846123';
 
-export const Hero = () => {
-
+export const Hero = ( {id} ) => {
   const [hero, setHero] = useState({'name':'empty'})
 
   useEffect(() => {
     async function fetchHeroInfo () {
-      console.log('before making the request')
+      console.log('making the request...') 
       try {      
-        const response = await axios.get('https://superheroapi.com/api/102141048846123/30/')
+        const response = await axios.get(
+          `https://superheroapi.com/api/102141048846123/${id}/`
+        )
         setHero(response.data)
         console.log('Hero info:',response);
       } catch (error){
         console.error(error)
       }
     }
-  })
+    fetchHeroInfo()
+  },[id])
 
-  async function handleClick () {
-    console.log('before making the request')
-    try {      
-      const response = await axios.get('https://superheroapi.com/api/102141048846123/30/')
-      setHero(response.data)
-      console.log('tar-response:',response);
-    } catch (error){
-      console.error(error)
-    }
+  function handleClick () {
+  
   }
 
   return (

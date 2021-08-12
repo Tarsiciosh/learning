@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div>
       
-      <Hero />
+      <Hero id={"30"} />
     </div>
   );
 }
