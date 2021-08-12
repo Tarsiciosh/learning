@@ -2,7 +2,6 @@ import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
-
 const emptyHero = {
   name: '',
   image: {
@@ -28,12 +27,6 @@ export const Hero = ( {token, id} ) => {
     }
     fetchHeroInfo()
   },[id,token])
-
-  function handleClick () {
-  
-  }
-
-  //style={{widht: "18rem", height: "18rem"}}  
 
   return (
     <>
@@ -65,10 +58,6 @@ export const Hero = ( {token, id} ) => {
           </div> 
         </div>
       </div>
-      {/*
-      <div style={{padding: 30}}> 
-        {<button className = "btn btn-primary" onClick={handleClick}> Test </button>}
-      </div> */}
     </>
   )
 }
