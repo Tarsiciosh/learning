@@ -1,4 +1,7 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+
 /*
 const emptyHero = {
   name: '',
@@ -15,13 +18,13 @@ const emptyHero = {
   },
 }
 */
-
-const Hero = ( {hero} ) => {
-  //const [hero, setHero] = useState(emptyHero)
+//{token, id} 
+const Hero = ({ hero }) => {
   /*
+  const [hero, setHero] = useState(emptyHero)
+  
   useEffect(() => {
     async function fetchHeroInfo () {
-      console.log('trying to make the request...') 
       try {      
         const response = await axios.get(
           `https://superheroapi.com/api/${token}/${id}/`
