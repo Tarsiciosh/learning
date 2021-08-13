@@ -1,17 +1,24 @@
 import React from 'react'
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-
+/*
 const emptyHero = {
   name: '',
   image: {
     url: ''
-  }
+  },
+  powerstats: {
+    'intelligence': '',
+    'strength': '',
+    'speed': '',
+    'durability': '',
+    'power': '',
+    'combat': ''
+  },
 }
+*/
 
-export const Hero = ( {token, id} ) => {
-  const [hero, setHero] = useState(emptyHero)
-
+const Hero = ( {hero} ) => {
+  //const [hero, setHero] = useState(emptyHero)
+  /*
   useEffect(() => {
     async function fetchHeroInfo () {
       console.log('trying to make the request...') 
@@ -27,6 +34,9 @@ export const Hero = ( {token, id} ) => {
     }
     fetchHeroInfo()
   },[id,token])
+  */
+
+  const ps = hero.powerstats
 
   return (
     <>
@@ -36,12 +46,16 @@ export const Hero = ( {token, id} ) => {
           alt="hero"  
         />
         <div className="card-body">
-          <h5 className="card-title">
-            {hero.name}
-          </h5>
-          <p className="card-text"> 
-            This is the description of the hero
-          </p>
+          <h5 className="card-title">{hero.name}</h5>
+          <ul className="list-group">
+            <li className="list-group-item" key="1"> {`Inteligence: ${ps.intelligence}`} </li>
+            <li className="list-group-item" key="2"> {`Strength: ${ps.strength}`}</li>
+            <li className="list-group-item"> {`Speed: ${ps.speed}`}</li>
+            <li className="list-group-item"> {`Durability: ${ps.durability}`}</li>
+            <li className="list-group-item"> {`Power: ${ps.power}`}</li>
+            <li className="list-group-item"> {`Combat: ${ps.combat}`}</li>
+          </ul>
+          <br/>
           <div className="row justify-content-around">
             <div className="col-4">
               <a className="btn btn-primary" 
