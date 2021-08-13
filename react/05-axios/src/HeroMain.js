@@ -2,14 +2,13 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import HerosGrid from './HerosGrid'
 import HerosPowerStats from './HerosPowerStats'
-import Hero from './Hero'
 
 const myToken = '102141048846123'
 
 
 const HeroMain = ({title}) => { 
-  const [token, setToken] = useState(myToken)
-  const [herosId, setHerosId] = useState(["720","107","63","73","238","455"])
+  const [token] = useState(myToken)
+  const [herosId] = useState(["644","620","70","263","298","659"])
   const [heros, setHeros] = useState([])
 
   useEffect(() => { 
@@ -28,13 +27,13 @@ const HeroMain = ({title}) => {
       }
     }
     getHerosInfo()   
-  },[])
+  },[herosId,token])
 
   return (
     <div style={{margin:'3rem'}}> 
       <p className="display-5"> {title} </p>
         <HerosGrid heros={heros}/>
-        {/*<HerosPowerStats heros={heros}/>*/} 
+        <HerosPowerStats heros={heros}/> 
     </div>
   )
 }
