@@ -41,14 +41,10 @@ const HerosPowerStats = ({heros}) => {
   return (
     <>
       <p className="display-6"> Group PowerStats: </p>
-      <ul className="list-group">
-
-        { ps.map(p => {
-          return(<HeroPowerStat data={p} key= {p.stat}/>)
-        })}
-        
-      
-      
+      <ul className="list-group" style={{width: "20rem"}}>
+        {ps.map(p => (
+          <HeroPowerStat data={p} key={p.stat}/>
+        ))}
       </ul>
     </>
   )
