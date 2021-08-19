@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import HerosGrid from './HerosGrid'
 import HerosPowerStats from './HerosPowerStats'
-import SignupForm from './HeroSearch'
+import HeroSearch from './HeroSearch'
 
 const myToken = '102141048846123'
 
 const HeroMain = ({title}) => { 
   const [token] = useState(myToken)
-  const [herosId] = useState(["644","620","70","263","298","259"])
+  const [herosId] = useState(["644","620","70","68","720","643"])
   const [heros, setHeros] = useState([])
 
   useEffect(() => { 
@@ -34,7 +34,7 @@ const HeroMain = ({title}) => {
       <p className="display-5"> {title} </p>
         <HerosGrid heros={heros}/>
         <HerosPowerStats heros={heros}/> 
-        <SignupForm />
+        <HeroSearch token={token}/>
     </div>
   )
 }

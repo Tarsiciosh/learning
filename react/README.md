@@ -78,7 +78,18 @@ what does it means polyfills?
 (src.index)
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 ## Learning Axios
 > yarn add axios
+
+## Challange 
+
+> create-react-app 06-challange
+> erase useless files
+> yarn add bootstrap
+> yarn add axios
+> yarn add formik
+> yarn add yup
+
+
+
 
