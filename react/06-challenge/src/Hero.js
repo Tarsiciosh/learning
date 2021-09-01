@@ -1,4 +1,4 @@
-const Hero = ({ hero }) => {
+const Hero = ({ hero, herosId, setHerosId }) => {
   const ps = hero.powerstats
 
   return (
@@ -11,26 +11,34 @@ const Hero = ({ hero }) => {
         <div className="card-body">
           <h5 className="card-title">{hero.name}</h5>
           <ul className="list-group">
-            <li className="list-group-item" key="1"> {`Inteligence: ${ps.intelligence}`} </li>
-            <li className="list-group-item" key="2"> {`Strength: ${ps.strength}`}</li>
-            <li className="list-group-item" key="3"> {`Speed: ${ps.speed}`}</li>
-            <li className="list-group-item" key="4"> {`Durability: ${ps.durability}`}</li>
-            <li className="list-group-item" key="5"> {`Power: ${ps.power}`}</li>
-            <li className="list-group-item" key="6"> {`Combat: ${ps.combat}`}</li>
+            <li className="list-group-item" key="1"> {`Inteligencia: ${ps.intelligence}`} </li>
+            <li className="list-group-item" key="2"> {`Fuerza: ${ps.strength}`}</li>
+            <li className="list-group-item" key="3"> {`Velocidad: ${ps.speed}`}</li>
+            <li className="list-group-item" key="4"> {`Durabilidad: ${ps.durability}`}</li>
+            <li className="list-group-item" key="5"> {`Potencia: ${ps.power}`}</li>
+            <li className="list-group-item" key="6"> {`Combate: ${ps.combat}`}</li>
           </ul>
           <br/>
           <div className="row justify-content-around">
             <div className="col-4">
               <a className="btn btn-primary" 
                 href="/mongo"> 
-                Details 
+                Detalles 
               </a>
             </div>
             <div className="col-4">
-              <a className="btn btn-danger" 
-                href="/mongo"> 
-                Delete 
-              </a>
+              <button className="btn btn-danger" 
+                onClick={()=>{
+                  console.log("herosId:", herosId)
+                  console.log("heroID", hero.id)
+                  console.log("hero position", herosId.indexOf(hero.id))         
+                  const newHerosId = herosId
+                  newHerosId.splice(newHerosId.indexOf(hero.id),1)
+                  console.log("new heros ID:", newHerosId)
+                  setHerosId(newHerosId)
+                }}> 
+                Borrar 
+              </button>
             </div>
           </div> 
         </div>

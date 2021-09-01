@@ -25,7 +25,6 @@ const HerosPowerStats = ({heros}) => {
     })
 
     var statsArray = []
-    
     for (const property in newPs){
       statsArray = [...statsArray,{
         stat: property,
@@ -33,14 +32,12 @@ const HerosPowerStats = ({heros}) => {
       }]
     }
     statsArray.sort((a,b) => (b.value - a.value))
-
     setPs(statsArray)
-
   },[heros])
 
   return (
     <>
-      <p className="display-6"> Group PowerStats: </p>
+      <p className="display-6"> PowerStats grupales: </p>
       <ul className="list-group" style={{width: "20rem"}}>
         {ps.map(p => (
           <HeroPowerStat data={p} key={p.stat}/>
@@ -51,13 +48,3 @@ const HerosPowerStats = ({heros}) => {
 }
 
 export default HerosPowerStats
-
-
-  /*
-    <li className="list-group-item"> {`Inteligence: ${ps.intelligence.toString()}`} </li>
-    <li className="list-group-item"> {`Strength: ${ps.strength.toString()}`}</li>     
-    <li className="list-group-item"> {`Speed: ${ps.speed.toString()}`}</li>
-    <li className="list-group-item"> {`Durability: ${ps.durability.toString()}`}</li>
-    <li className="list-group-item"> {`Power: ${ps.power.toString()}`}</li>
-    <li className="list-group-item"> {`Combat: ${ps.combat.toString()}`}</li>  
-  */
