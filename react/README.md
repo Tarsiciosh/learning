@@ -84,11 +84,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 ## Challange 
 
 > create-react-app 06-challange
-> erase useless files
+> (erase useless files)
 > yarn add bootstrap
 > yarn add axios
 > yarn add formik
 > yarn add yup
+> yarn add react-router-dom
+
+
+
 
 
 
