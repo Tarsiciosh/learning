@@ -7,21 +7,21 @@ const HerosPowerStats = ({heros}) => {
   
   useEffect ( () => {
     let newPs = {
-      intelligence: 0, 
-      strength: 0, 
-      speed : 0, 
-      durability : 0, 
-      power : 0, 
-      combat : 0
+      Inteligencia: 0, 
+      Fuerza: 0, 
+      Velocidad : 0, 
+      Durabilidad : 0, 
+      Potencia : 0, 
+      Combate : 0
     }
 
     heros.forEach(hero => {
-      newPs.intelligence = newPs.intelligence + parseInt(hero.powerstats.intelligence)
-      newPs.strength = newPs.strength + parseInt(hero.powerstats.strength)
-      newPs.speed = newPs.speed + parseInt(hero.powerstats.speed)
-      newPs.durability = newPs.durability + parseInt(hero.powerstats.durability)
-      newPs.power = newPs.power + parseInt(hero.powerstats.power)
-      newPs.combat = newPs.combat + parseInt(hero.powerstats.combat)
+      newPs.Inteligencia = newPs.Inteligencia + parseInt(hero.powerstats.intelligence)
+      newPs.Fuerza = newPs.Fuerza + parseInt(hero.powerstats.strength)
+      newPs.Velocidad = newPs.Velocidad + parseInt(hero.powerstats.speed)
+      newPs.Durabilidad = newPs.Durabilidad + parseInt(hero.powerstats.durability)
+      newPs.Potencia = newPs.Potencia + parseInt(hero.powerstats.power)
+      newPs.Combate = newPs.Combate + parseInt(hero.powerstats.combat)
     })
 
     var statsArray = []
@@ -37,7 +37,7 @@ const HerosPowerStats = ({heros}) => {
 
   return (
     <>
-      <p className="display-6"> PowerStats grupales: </p>
+      <p className="display-6">Capacidades grupales: </p>
       <ul className="list-group" style={{width: "20rem"}}>
         {ps.map(p => (
           <HeroPowerStat data={p} key={p.stat}/>

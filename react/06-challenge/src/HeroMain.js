@@ -3,14 +3,12 @@ import axios from 'axios'
 import HerosGrid from './HerosGrid'
 import HerosPowerStats from './HerosPowerStats'
 import HeroSearch from './HeroSearch'
-import LoginForm from './HerosLogin'
 
-const myToken = '102141048846123'
+const myHerosToken = '102141048846123'
 
 const HeroMain = ({title}) => { 
-  const [token] = useState(myToken)
   const [isLoading, setIsLoading] = useState(true)
-  const [herosId, setHerosId] = useState(["68","720","643"])
+  const [herosId, setHerosId] = useState([644])
   const [heros, setHeros] = useState([])
 
   useEffect(() => { 
@@ -19,12 +17,12 @@ const HeroMain = ({title}) => {
         var fetchedHeros = []
         for (var i = 0; i< herosId.length; i++){
           var response = await axios.get(
-            `https://superheroapi.com/api/${token}/${herosId[i]}/`
+            `https://superheroapi.com/api/${myHerosToken}/${herosId[i]}/`
           )
           fetchedHeros = [...fetchedHeros, response.data]
         }
         setHeros(fetchedHeros)
-        //setIsLoading(false) 
+        setIsLoading(false) 
       } catch (error){
         console.error(error)
       }
@@ -34,13 +32,20 @@ const HeroMain = ({title}) => {
 
   return (        
     <>
-      <LoginForm />
+      { !isLoading ? (
+        <div style={{margin:'3rem'}}> 
+          <p className="display-5"> {title} </p>
+            <HerosGrid heros={heros} herosId={herosId} setHerosId={setHerosId} />
+            <HerosPowerStats heros={heros}/> 
+            <HeroSearch token={myHerosToken} heros={heros} herosId={herosId} setHerosId={setHerosId} />
+        </div> 
+        ) : (<p className="display-6" style={{margin:'1rem'}}>cargando...</p>)
+      }
     </>
   )
 }
 
 export default HeroMain
-
 
 /*
  { !isLoading ? (

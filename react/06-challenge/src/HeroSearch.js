@@ -28,7 +28,7 @@ const HeroSearch = ({token, heros, herosId, setHerosId}) => {
         }}
         validationSchema={Yup.object({
           name: Yup.string()
-            .max(20, 'Must be 20 characters or less') 
+            .max(20, 'Tiene que ser de 20 caracteres o menos') 
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
@@ -38,14 +38,14 @@ const HeroSearch = ({token, heros, herosId, setHerosId}) => {
         }}
       >
         <Form style={{marginTop:"2rem"}} >
-          <p className="display-6">Search your hero:</p>  
+          <p className="display-6">Busca tu héroe:</p>  
           <HeroTextInput 
-            label="Name"
+            label="Nombre"
             name="name"
             type="text"
             placeholder="Superman"   
           />
-          <button className="btn btn-primary" type="submit">Search</button>  
+          <button className="btn btn-primary" type="submit">Buscar</button>  
         </Form>
       </Formik>
       <br/>

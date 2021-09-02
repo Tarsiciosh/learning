@@ -1,12 +1,13 @@
-import { useState } from "react"
+//import { useState } from "react"
 import { Formik, Form } from "formik"
 import * as Yup from 'yup'
 import axios from 'axios'
 import HeroTextInput from "./HeroTextImput"
 
-const LoginForm = () => {
+const Login = ({ setToken }) => {
   
-  const [authToken,setAuthToken] = useState()
+  //const [authToken,setAuthToken] = useState()
+
 
   async function submitInfo (email,password) {   
     try {      
@@ -15,9 +16,9 @@ const LoginForm = () => {
           email: email,
           password: password
       })
-      setAuthToken(response.data.token)
-      console.log(authToken)
-      localStorage.setItem('token', authToken)
+      setToken(response.data.token)
+      //console.log(authToken)
+      //localStorage.setItem('token', authToken)
     } catch (error){
       console.error(error)
     }
@@ -39,7 +40,7 @@ const LoginForm = () => {
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          //alert(JSON.stringify(values, null, 2));
+        
           submitInfo(values.email, values.password)
           setSubmitting(false);
         }, 400);
@@ -73,12 +74,4 @@ const LoginForm = () => {
   )
 }
 
-export default LoginForm
-
-/*
- <div className="card" style={{width: "18rem", margin:"1rem", padding:"2rem"}}>
-   
-*/
-
-
-
+export default Login
