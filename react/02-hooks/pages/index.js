@@ -4,6 +4,11 @@ import Counter from './components/03-using-the-state-hook'
 import EffectExample from './components/04-using-the-effect-hook' 
 import ChatRecipientPicker from './components/06-building-your-own-hooks'
 
+
+
+
+
+
 export default function Home() {
   return (
     <div className="container">
@@ -15,16 +20,17 @@ export default function Home() {
       <main>
         <p className="display-1"> Learning hooks</p> 
 
-        <StateAndEffectCounter/>
+        <StateAndEffectCounter />
         <br/>
 
-        <Counter/>
+        <Counter />
 
         <br/>
         
-        < EffectExample/>
+        <EffectExample />
 
-        <ChatRecipientPicker/>
+        <ChatRecipientPicker />
+
         
       </main>
 

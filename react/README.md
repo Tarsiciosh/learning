@@ -107,3 +107,8 @@ git push -u origin main
 git remote add origin https://github.com/Tarsiciosh/challange.git
 git branch -M main
 git push -u origin main
+
+
+## 07 CONTEXT
+instead of using context sometimes it is better to use "component composition"
+
