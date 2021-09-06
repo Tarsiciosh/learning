@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import useToken from './useToken'
 
 const App = () => {
-
-  const {token, setToken} = useToken() 
+  
+  const [token, setToken] = useToken() 
 
   if (!token) {
     return <Login setToken={setToken} />

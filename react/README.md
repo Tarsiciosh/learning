@@ -53,6 +53,7 @@ what does it means polyfills?
 > git init
 > git add .
 > git commit -am "adding file"
+> git branch -M main
 > git remote add origin https://github.com/tarsiciosh/nextjs-blog.git
 > git push -u origin master
 
@@ -91,9 +92,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 > yarn add yup
 > yarn add react-router-dom
 
+## from github page
 
+### create a new repository on the command line
+echo "# challange" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Tarsiciosh/challange.git
+git push -u origin main
 
-
-
-
-
+### push an existing repository from the command line
+git remote add origin https://github.com/Tarsiciosh/challange.git
+git branch -M main
+git push -u origin main
