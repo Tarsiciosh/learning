@@ -8,7 +8,7 @@ const ThemedButton = (props) => {
   return (
     <button 
       {...props}
-      style={{backgroundColor: theme.backgroundColor}}
+      style={{color:theme.color, background:theme.background}}
     />
   )
 }
