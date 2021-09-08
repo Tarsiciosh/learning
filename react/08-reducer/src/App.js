@@ -23,7 +23,7 @@ function reducer (state, action) {
 }
 
 function Counter() {
-                                                //initialArg  init
+                                                 //initialArg  init
   const [state, dispatch] = useReducer(reducer, initialCount, init)
   //the initial state will be set to init(initialArg)
   
