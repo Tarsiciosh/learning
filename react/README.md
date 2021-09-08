@@ -108,6 +108,11 @@ git remote add origin https://github.com/Tarsiciosh/challange.git
 git branch -M main
 git push -u origin main
 
+## how to create a development brach
+git branch development
+git checkout development
+git push -u origin development
+
 ### how to merge from develpment to main
 (on branch development) git merge main
 git checkout main
@@ -117,3 +122,51 @@ git merge development
 ## 07 CONTEXT
 instead of using context sometimes it is better to use "component composition"
 
+## GIT class from CS50W
+
+git clone <url>
+touch hello.html (create the file)
+code . //opens the file
+git add hello.html (add the file) 
+git commit -m "first commit" 
+git status (shows the status)
+git push
+open hello.html (opens the file in a browser)
+git commit -am "first commit" (add and commit shorthand)
+git push 
+(... did some changes in github site)
+git pull
+
+(merge conflict)
+a=1
+<<<< HEAD
+b=2 (your changes)
+===
+b=0 (remote changes)
+>>>> 5765c64657f234 (conflicting commit hash)
+c=3
+
+(... fix the merge coflict)
+git commit -am "fix merge conflict"
+git push
+
+git log (log all commits)
+git reset --hard <hash commit>
+git reset --hard origin/master
+
+git branch (shows in which branch you are)
+git checkout -b style (creates and moves to style branch)
+git commit -am "Move style properties"
+git checkout master
+git commit -am "remove exclamation" (same line)
+git merge style 
+
+(merge conflict)
+
+(... fix merge conflict)
+
+Github feactures 
+
+- fork (own version of the respository)ç
+- pull request (when you have something to add)
+- github pages
