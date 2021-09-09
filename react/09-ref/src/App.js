@@ -1,8 +1,10 @@
+import React from 'react'
 import { useRef } from 'react'
 import './styles.css'
 
+
 function TextInputWithFocusButton(){
-  
+
   const inputEl = useRef(null)
   
   const onButtonClick = () => {
@@ -17,21 +19,30 @@ function TextInputWithFocusButton(){
   )
 }
 
-//fancy button example
+//fancy button example (Forwarding refs to DOM components)
+/*
 function FancyButton(props) {
   return (
-    <button>
+    <button className="FancyButton">
       {props.children}
     </button>
   )
 }
+*/
+const FancyButton = React.forwardRef((props,ref) => (
+  <button ref={ref} className="FancyButton">
+    {props.children}
+  </button>
+))
+// you can now get a ref directly to the DOM button:
+const ref = React.createRef()
 
 function App() {
   return (
     <>
       <p>esto es un paragraph</p>
       <TextInputWithFocusButton/>
-      <FancyButton> Button </FancyButton>
+      <FancyButton ref={ref}> Fancy Button </FancyButton>
       <button> hello </button>
     </>
   )
