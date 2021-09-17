@@ -285,10 +285,10 @@ test( 'the mock function is called twice', () => {
   // The mock function is called twice
   expect(mockCallback.mock.calls.length).toBe(2);
   
-  // The first argument of the first call to the function was 0
+  // In the first call, the first argument was 0
   expect(mockCallback.mock.calls[0][0]).toBe(0);
 
-  // The first argument of the second call to the function was 1
+  // In the second call, the first argument was 1
   expect(mockCallback.mock.calls[1][0]).toBe(1);
 
   // The return value of the first call to the function was 42
@@ -320,13 +320,29 @@ test('mock return values', ()=>{
   console.log('second call, first argument:',filterTestFn.mock.calls[1][0]) //second call, first argument -> 12
 })
 
-//Moking modules
+// Moking modules
+// (see also users.js)
 jest.mock('axios')
 
 test('mocking modules', () =>{
   const users = [{name: 'Bob'}]
   const resp = {data: users}
-  //axios.get.mockResolvedValue(resp)
-  axios.get.mockImplementation(()=> Promise.resolve(resp))
+  axios.get.mockResolvedValue(resp)
+  //axios.get.mockImplementation(()=> Promise.resolve(resp))
   return Users.all().then(data => expect(data).toEqual(users))
 })
+
+const myMockFn = jest.fn(cb => cb(null, true))
+const tarTest = arg => arg(null, true)
+console.log(tarTest((arg1, arg2)=>{console.log(`arg1: ${arg1} arg2: ${arg2}`)}))
+
+//Mock implementation
+
+jest.mock('axios')
+axios.get.mockImplementation ((id) => Promise.resolve({
+  data:[
+    {name:'Bob'},
+    {name:'Tom'},
+    {name:'Roger'}
+  ]
+}))

@@ -195,3 +195,135 @@ test('adds 1 + 2 to equal 3', () => {
     "test": "jest"
   }
 }
+
+<br/> <br/>
+
+# Refresh on CSS
+
+## Element selector: 
+```html
+<p>Hello</p>
+```
+```css  
+p {
+  text-align: center;
+  color: red
+}
+```
+<br/>
+
+## Id selector:
+```html
+<p id="para1">Hello</p>
+```
+```css
+#para1 { 
+  text-align: center;
+  color: red
+}
+```
+<br/>
+
+## Class selector:
+```html
+<p class="center">
+```
+```css
+.center {
+  text-align: center;
+  color: red 
+}
+```
+<br/>
+
+## Elements with a particular class:
+```css
+p.center {
+  text-align: center;
+  color: red 
+}
+```
+<br/>
+
+## Element referring to more than one class:
+```html
+<p class="center large">This paragraph refers to two classes.</p>
+```
+
+<br/> </br>
+
+# Markdown github guide
+
+text **bold** and *italic* [link to google](http://google.com)
+
+__bold too__ _italic too_ 
+
+1. one 
+2. two
+
+* one
+* two
+
+- one
+- two
+  - sub 1
+  - sub 2
+  
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+
+![Github logo](/images/logo.png)
+Format_ ![Alt Text](url)
+
+# header XL
+## header L
+### header M
+#### S
+..
+
+> this is a qoute 
+> by tsh
+
+This an example of a small peace of code, this variable: `let example = true` should be true
+
+### Example with 4 times spaces:
+    
+    if (isAwesome){
+     return true
+    }
+
+### Example with github code fencing:
+```
+if (condition){
+  return true
+}
+```
+
+## Example with syntax highlighting:
+```javascript
+if (condition){
+  return true
+}
+```
+
+## Task list example (github)
+
+- [x] this is a complete item
+- [ ] this is an incomplete item
+
+
+## Table example:
+
+First header | Second header
+-------------|--------------
+content cell 1 | content cell 2
+content in the first column | content in the second column
+
+## Strikethrough example:
+~~this~~
+
+
+## Emoji example:
+
+I like to receive :hugs:
+
+
