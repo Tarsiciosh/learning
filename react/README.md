@@ -198,9 +198,9 @@ test('adds 1 + 2 to equal 3', () => {
 
 <br/> <br/>
 
-# Refresh on CSS
+## Refresh on CSS
 
-## Element selector: 
+### Element selector: 
 ```html
 <p>Hello</p>
 ```
@@ -210,9 +210,8 @@ p {
   color: red
 }
 ```
-<br/>
 
-## Id selector:
+### Id selector:
 ```html
 <p id="para1">Hello</p>
 ```
@@ -222,9 +221,8 @@ p {
   color: red
 }
 ```
-<br/>
 
-## Class selector:
+### Class selector:
 ```html
 <p class="center">
 ```
@@ -234,20 +232,34 @@ p {
   color: red 
 }
 ```
-<br/>
 
-## Elements with a particular class:
+### Elements with a particular class:
 ```css
 p.center {
   text-align: center;
   color: red 
 }
 ```
-<br/>
 
-## Element referring to more than one class:
+### Element referring to more than one class:
 ```html
 <p class="center large">This paragraph refers to two classes.</p>
+```
+
+### Universal selector:
+```css
+* {
+  text-align: center;
+  color: blue;
+}
+```
+
+### Grouping selectors:
+```css
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
 ```
 
 <br/> </br>
@@ -327,3 +339,40 @@ content in the first column | content in the second column
 I like to receive :hugs:
 
 
+## 11-STYLES
+```
+npm create-react-app 11-styles
+```
+```
+yarn add bootstrap
+````
+```    
+yarn add node-sass
+```
+
+Delete all unnecessary stuff
+
+```javascript
+(src/index.js)
+import 'bootstrap/dist/css/bootstrap.css'
+```
+Create a file src/custom.scss
+```javascript
+// Override default variables before the import
+$body-bg: #000;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+```
+```javascript
+(src/index.js)
+import './custom.scss'
+```
+
+because of compatibilities issues:
+```
+yarn remove node-sass
+```
+```
+yarn add node-sass@5
+```
