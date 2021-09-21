@@ -3,12 +3,16 @@ $body-bg: lightgray;
 
 // Import Bootstrap and its default variables
 
+
 // Modules:
+/*
 @use 'base';
+
 .inverse {
   background-color: base.$primary-color;
   color:white;
 }
+*/
 
 // Mixins:
 @mixin myMixinTest ($color: red, $back: black) {
@@ -34,9 +38,57 @@ $body-bg: lightgray;
   @include theme ($theme: DarkRed)
 }
 
-.success {
+.success_ {
   @include theme ($theme: DarkGreen)
 }
 
+// Extend/Inheritance
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px 10px;
+  color: #333;
+}
+
+%equal-heights {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.message {
+  @extend %message-shared;
+}
+
+.success {
+  @extend %message-shared;
+  border-color: green;
+}
+
+.error {
+  @extend %message-shared;
+  border-color: red;
+}
+
+.warning {
+  @extend %message-shared;
+  border-color: yellow;
+}
+
+// Operators
+.container {
+  width: 100%;
+}
+
+article[role="main"] {
+  border: 1px solid red;
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+aside[role="complementary"] {
+  border: 1px solid blue;
+  float: right;
+  width: 300px / 960px * 100%;
+}
 
 @import '~bootstrap/scss/bootstrap.scss';

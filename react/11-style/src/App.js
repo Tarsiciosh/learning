@@ -5,6 +5,12 @@ function App() {
       <p className="myClass"> paragraph example</p>
       <p claseName="inverse"> Inverse paragraph class example</p>
       <button className="btn btn-primary">click me</button>
+      <br/> <br/>
+      <div className="warning">Warning!</div>
+      <div className="error">Error!</div>
+      <div className="success">Success!</div>
+      <article role="main"> hello </article>
+      <aside role="complementary"> world </aside>
     </div>
   );
 }

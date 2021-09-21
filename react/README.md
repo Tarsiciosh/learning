@@ -262,6 +262,82 @@ h1, h2, p {
 }
 ```
 
+### Shadow:
+(horizontal-shadow vertical-shadow blur xx color )
+```css
+div {
+  box-shadow: 10px 10px 5px 0 grey;
+}
+```
+
+### Overflow:
+The CSS overflow property controls what happens to content that is too big to fit into an area.
+
+- **visible** - Default. The overflow is not clipped. The content renders outside the element's box
+- **hidden** - The overflow is clipped, and the rest of the content will be invisible
+- **scroll** - The overflow is clipped, and a scrollbar is added to see the rest of the content
+- **auto** - Similar to scroll, but it adds scrollbars only when necessary
+
+### Boxsizing:
+The CSS box-sizing property allows us to include the padding and border in an element's total width and height. Applying this to all elements is safe and wise
+
+```css
+* {
+  box-sizing: border-box;
+}
+```
+
+### Media Queries:
+```css
+@media not|only mediatype and (expressions) {
+  CSS-Code;
+}
+```
+#### Media Types
+ value | description
+ --|--
+ **all** |	Used for all media type devices
+ **print** |	Used for printers
+ **screen** |	Used for computer screens, tablets, smart-phones etc.
+ **speech** |	Used for screenreaders that "reads" the page out loud
+
+#### Example
+```css
+/* Set the background color of body to tan */
+body {
+  background-color: tan;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  body {
+    background-color: blue;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: olive;
+  }
+}
+```
+
+### Flexbox
+```css
+.flex-container {
+  display:flex;
+}
+```
+The flex container properties are:
+
+- **flex-direction** Defines in which direction the container wants to stack the flex items. (e.g. column, column-reverse, row, row-reverse)
+- **flex-wrap** Specifies whether the flex items should wrap or not. (e.g. wrap, nowrap, wrap-reverse) 
+- **flex-flow** A shorthand property for setting both the flex-direction and flex-wrap properties. (e.g. row wrap)
+- **justify-content** Is used to align the flex items. (e.g. center, flex-start, flex end)
+- align-items
+- align-content
+
 <br/> </br>
 
 # Markdown github guide
@@ -339,6 +415,8 @@ content in the first column | content in the second column
 I like to receive :hugs:
 
 
+<br>
+
 ## 11-STYLES
 ```
 npm create-react-app 11-styles
@@ -376,3 +454,6 @@ yarn remove node-sass
 ```
 yarn add node-sass@5
 ```
+
+
+&laquo -> (<<)
