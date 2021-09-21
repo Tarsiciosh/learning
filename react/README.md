@@ -457,3 +457,20 @@ yarn add node-sass@5
 
 
 &laquo -> (<<)
+
+## 12-Redux
+
+```
+# Redux + Plain JS template
+npx create-react-app my-app --template redux
+
+# Redux + TypeScript template
+npx create-react-app my-app --template redux-typescript
+```
+
+ ## 13-Redux Walkthrough
+
+```
+npm install @reduxjs/toolkit react-redux
+```
+
