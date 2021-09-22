@@ -471,6 +471,78 @@ npx create-react-app my-app --template redux-typescript
  ## 13-Redux Walkthrough
 
 ```
-npm install @reduxjs/toolkit react-redux
+yarn add @reduxjs/toolkit react-redux
 ```
+
+- [x] create the store
+- [x] provide redux store to react
+- [x] create a redux state slice
+- [x] add slice reducers to the store
+- [x] use state and actions in react components
+
+
+## GIT ALKEMY:
+
+> git config --global user.name "Tarsicio Spraggon"
+> git config --global user.email "tarsiciosh@gmail.com"
+
+> git init (already created folder) 
+
+> git clone https://github.com/... (clones a project)
+
+> git status:
+
+> your branch is up to date with 'origin/develpment' 
+(is up to date with the internet)
+
+> git add -A (add all files)
+
+> git add . (all from here to inwards)
+
+> git add -p (see all changes - **recommended way**)
+
+> git commit -m'description of the commit'
+
+> git checkout --app/controller (example to remove file that was not commited - file with a commented part)
+
+> git log
+
+> git push origin master (push to the *internet* (origin) my *branch* (master))
+
+(example of git rm)
+
+> erase file from os
+
+> git add deletedFile (add the changes )
+
+> git status
+changes to be commited:
+
+  deleted: deletedFile
+
+> git commit -m'deletedFile deleted'
+
+> git checkout 70298437509823740958720394875d (before the delete) 
+
+> (the file is back)
+
+> git checkout master (back to last commit)
+
+
+
+> git rm someFile (automatically delete the file and add it)
+
+> git reset HEAD someFile (go back to previous state)
+
+> git checkout someFile (nedeed to restore the file)
+
+
+
+> add some change
+
+> click on the file (show changes)
+
+> git diff fileName (behind the scenes)
+
+> arrow to 
 
