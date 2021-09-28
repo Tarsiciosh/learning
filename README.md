@@ -18,3 +18,9 @@ or
 
 $ npm run ios 
 
+
+## GIT WITH JAVI HERRERA
+
+si queres cambiar de rama y hay cosas que faltan git the avisa
+
+git stash (like a copy)

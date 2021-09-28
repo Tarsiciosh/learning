@@ -82,7 +82,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 ## Learning Axios
 > yarn add axios
 
-## Challange 
+## Challenge 
 
 > create-react-app 06-challange
 > (erase useless files)
@@ -103,7 +103,7 @@ git branch -M main
 git remote add origin https://github.com/Tarsiciosh/challange.git
 git push -u origin main
 
-### push an existing repository from the command line
+## push an existing repository from the command line
 git remote add origin https://github.com/Tarsiciosh/challange.git
 git branch -M main
 git push -u origin main
@@ -174,28 +174,35 @@ Github feactures
 
 ## Jest
 
-> yarn add --dev jest
+```
+yarn add --dev jest
+````
 
 (sum.js)
+```javascript
 function sum(a, b) {
   return a + b
 }
 module.exports = sum
+```
 
 (sum.test.js)
+```javascript
 const sum = require('./sum');
 
 test('adds 1 + 2 to equal 3', () => {
   expect(sum(1, 2)).toBe(3);
 });
+```
 
 (package.json)
+```json
 {
   "scripts": {
     "test": "jest"
   }
 }
-
+```
 <br/> <br/>
 
 ## Refresh on CSS
@@ -456,11 +463,9 @@ yarn add node-sass@5
 ```
 
 
-&laquo -> (<<)
+## 12-Redux Template
 
-## 12-Redux
-
-```
+```python
 # Redux + Plain JS template
 npx create-react-app my-app --template redux
 
@@ -481,7 +486,7 @@ yarn add @reduxjs/toolkit react-redux
 - [x] use state and actions in react components
 
 
-## GIT ALKEMY:
+## Alkemy GIT course
 
 > git config --global user.name "Tarsicio Spraggon"
 > git config --global user.email "tarsiciosh@gmail.com"
@@ -493,15 +498,15 @@ yarn add @reduxjs/toolkit react-redux
 > git status:
 
 > your branch is up to date with 'origin/develpment' 
-(is up to date with the internet)
+(is up to date with the "internet")
 
 > git add -A (add all files)
 
-> git add . (all from here to inwards)
+> git add . (all from there)
 
 > git add -p (see all changes - **recommended way**)
 
-> git commit -m'description of the commit'
+> git commit -m 'description of the commit'
 
 > git checkout --app/controller (example to remove file that was not commited - file with a commented part)
 
@@ -509,26 +514,26 @@ yarn add @reduxjs/toolkit react-redux
 
 > git push origin master (push to the *internet* (origin) my *branch* (master))
 
-(example of git rm)
+### Example of git rm
 
 > erase file from os
 
 > git add deletedFile (add the changes )
 
 > git status
+
+```
 changes to be commited:
 
   deleted: deletedFile
-
-> git commit -m'deletedFile deleted'
+```
+> git commit -m 'deletedFile deleted'
 
 > git checkout 70298437509823740958720394875d (before the delete) 
 
 > (the file is back)
 
 > git checkout master (back to last commit)
-
-
 
 > git rm someFile (automatically delete the file and add it)
 
@@ -537,6 +542,7 @@ changes to be commited:
 > git checkout someFile (nedeed to restore the file)
 
 
+### VS code features
 
 > add some change
 
@@ -544,5 +550,171 @@ changes to be commited:
 
 > git diff fileName (behind the scenes)
 
-> arrow to 
+> arrow to ?
 
+### Branches
+
+> git branch payments
+
+> git status 
+
+on branch master
+
+> git checkout payments
+
+> (create new files from ruby - rail g scaffold payments)
+
+> git add -p
+
+> (check change per change)
+
+> git add -A
+
+> git commit -m "payment scaffold files"
+
+> git push origin payments
+
+[new branch] payments -> payments
+
+### Pull Request
+
+when you do a commit bitbuckt gives you a link to do the poll request
+
+> (bitbucket page)
+
+> title: ...
+
+> summmary: 
+> - payment controller 
+> - model 
+> - migration ...
+
+Evidence:
+
+(imgage of the tested feature)
+
+> reviewer: ... <br>
+> [x] delete branch after merge
+
+> git commit -m 'Pr Fixes' (minor fixes) 
+
+> git push origin payments
+
+> (mentor check and aproves)
+
+> source: payments
+
+> destination: master
+
+> squash (delete all commits and create only one)
+
+> close source branch
+
+> PR fixes must be deleted only important commits must be present
+
+> git status
+
+Your branch is behind 'origin/master' by 1 commit
+
+> git pull origin master
+
+(conflict test)
+
+> git checkout -b clients-payments (create and checkout all in one)
+
+change code
+
+> git add -p
+
+> git commit -m 'payments added to client'
+
+> git checkout master
+
+change code
+
+> git add -p
+
+> git commit -m 'tiny client refactor'
+
+> git push origin master
+
+> git checkout client-payments
+
+> git push origin clients-payments
+
+(in bitbuket create pull request)
+
+source: clients-payments
+destination: master
+
+title
+
+description:
+Summary 
+
+- Paypal payment add client
+- Payments service added
+- Vat logic updated in client
+
+Reviewers 
+
+delete branch
+
+> git checkout master
+
+> git pull origin master (important)
+
+> check who did that change
+
+> git checkout clients-payments
+
+> git merge master
+
+> gits status
+
+> ckeck errors
+
+> cat app/..
+
+> it is important to pull master regularly 
+
+> git commit -m 'merge from master'
+
+> git push origin client-payments
+
+(back to pull request in bitbucket)
+
+reviewer approves
+
+squash
+
+> merge
+
+### diferents commit methods
+
+merge vs rebase
+
+it also another way
+
+
+(something recomendable)
+> git merge -abort
+
+
+always make a pull before git branch
+
+alway do git add -p 
+
+alway commits in english
+
+small commits. it is better to do more commits with small changes than one big commit
+
+check conflicts with the autor 
+
+never git push -f
+
+its is better to do:
+
+git push --force-with-lease
+
+detects if there is a commit added and inform you
