@@ -745,3 +745,18 @@ Tar@192 t78-project %
 ```
 
 > start working on feature
+
+```
+yarn add formik
+yarn add yup
+```
+```
+git add package.json
+git add yarn.lock
+```
+```
+git commit -m "adds formik and yup"
+```
+```
+git push origin feature/OT78-29-formulario-edicion-creacion-actividades
+```
