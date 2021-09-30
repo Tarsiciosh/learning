@@ -718,3 +718,30 @@ its is better to do:
 git push --force-with-lease
 
 detects if there is a commit added and inform you
+
+## FIRST TASK
+
+make a pull of main
+```
+Tar@192 t78-project % git pull origin main
+Password for 'https://tarsiciosh@bitbucket.org': 
+From https://bitbucket.org/alkemy-dev/t78-project
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+```
+> crate branch from the jira page
+
+> copy the command from the jira page and paste it in the command line
+
+```
+Tar@192 t78-project % git fetch && git checkout feature/OT78-29-formulario-edicion-creacion-actividades
+
+From https://bitbucket.org/alkemy-dev/t78-project
+ * [new branch]      feature/OT78-26-formulario-login -> origin/feature/OT78-26-formulario-login
+ * [new branch]      feature/OT78-29-formulario-edicion-creacion-actividades -> origin/feature/OT78-29-formulario-edicion-creacion-actividades
+Branch 'feature/OT78-29-formulario-edicion-creacion-actividades' set up to track remote branch 'feature/OT78-29-formulario-edicion-creacion-actividades' from 'origin'.
+Switched to a new branch 'feature/OT78-29-formulario-edicion-creacion-actividades'
+Tar@192 t78-project % 
+```
+
+> start working on feature
