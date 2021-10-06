@@ -696,14 +696,13 @@ merge vs rebase
 
 it also another way
 
-
 (something recomendable)
 > git merge -abort
 
 
 always make a pull before git branch
 
-alway do git add -p 
+always do git add -p 
 
 alway commits in english
 
@@ -760,3 +759,7 @@ git commit -m "adds formik and yup"
 ```
 git push origin feature/OT78-29-formulario-edicion-creacion-actividades
 ```
+
+> in the bitbucket page press create pull request
+> add Summary and Evidence
+> send
